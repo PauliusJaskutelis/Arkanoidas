@@ -1,6 +1,8 @@
 package org.example;
 
 public class Map {
+    private int block = 2;
+    private int clearBlock = 0;
     private int[][] map;
 
     public Map(int mapType) {
@@ -57,13 +59,16 @@ public class Map {
         return map.length;
     }
 
+    public boolean isAvailable(int x, int y){
+        return this.map[y][x] == 0;
+    }
+
     public boolean isBlockHitBox(int ballX, int ballY){
-        if(map[ballY][ballX] == 2){
-            map[ballY][ballX] = 0;
-            return true;
-        } else {
-            return false;
-        }
+        return map[ballY][ballX] == block;
+    }
+
+    public void clearBlock(int ballX, int ballY){
+        map[ballY][ballX] = clearBlock;
     }
 
     public boolean isMapCleared(){

@@ -1,25 +1,23 @@
 package org.example;
 
 public class Ball {
-    private int x;
-    private int y;
+    private int positionX;
+    private int positionY;
     private int flyingDirectionX;
     private int flyingDirectionY;
 
     public Ball(int x, int y, int flyingDirectionX, int flyingDirectionY) {
-        this.x = x;
-        this.y = y;
+        this.positionX = x;
+        this.positionY = y;
         this.flyingDirectionX = flyingDirectionX;
         this.flyingDirectionY = flyingDirectionY;
     }
 
-    public void setFlyingDirectionX(int flyingDirection){
-        flyingDirectionX = flyingDirection;
+    public void setFlyingDirection(int flyingDirectionX, int flyingDirectionY){
+        this.flyingDirectionX = flyingDirectionX;
+        this.flyingDirectionY = flyingDirectionY;
     }
 
-    public void setFlyingDirectionY(int flyingDirection){
-        flyingDirectionY = flyingDirection;
-    }
     public void invertDirectionX(){
         if(flyingDirectionX == 1) { flyingDirectionX = -1; }
         else if(flyingDirectionX == -1) { flyingDirectionX = 1; }
@@ -31,21 +29,21 @@ public class Ball {
     }
 
     public void movementX(int flyingDirection) {
-        if(flyingDirection == 1) { x++; }
-        if(flyingDirection == -1) { x--; }
+        if(flyingDirection == 1) { positionX++; }
+        if(flyingDirection == -1) { positionX--; }
     }
 
     public void movementY(int flyingDirection) {
-        if(flyingDirection == 1) { y++; }
-        if(flyingDirection == -1) { y--; }
+        if(flyingDirection == 1) { positionY++; }
+        if(flyingDirection == -1) { positionY--; }
     }
 
     public int getX() {
-        return x;
+        return positionX;
     }
 
     public int getY() {
-        return y;
+        return positionY;
     }
 
     public int getFlyingDirectionX() {
